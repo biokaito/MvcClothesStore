@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "SignIn";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<div>
+    
+            @Html.ValidationSummary(true)
+        <h3>@ViewBag.Thongbao</h3>
+        <form class="login-form" method="post">
+            <div class="title">
+                <p class="titletext">SIGN IN</p>
+            </div>
+            <div class="txtb">
+                <input type="text" name="username">
+                <span data-placeholder="Username"></span>
+            </div>
+            <div class="txtb">
+                <input type="password" name="pwd">
+                <span data-placeholder="Password"></span>
+            </div>
+            <input type="submit" class="logbtn" value="Join">
+            <div class="bottom-text">
+                Don't have account? <a href="@Url.Action("SignUp", "User")" style="text-decoration:none">Sign up</a>
+            </div>
+        </form>
+        <script type="text/javascript">
+            $(".txtb input").on("focus", function () {
+                $(this).addClass("focus");
+            });
+
+            $(".txtb input").on("blur", function () {
+                if ($(this).val() == "")
+                    $(this).removeClass("focus");
+            });
+        </script>
+</div>

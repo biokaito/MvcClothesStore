@@ -127,10 +127,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbQLBansach.designer.cs">
+    <Compile Include="Models\dbQLClothes.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>dbQLBansach.dbml</DependentUpon>
+      <DependentUpon>dbQLClothes.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -162,9 +162,9 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="images\item1.webp" />
     <Content Include="images\item1hover.webp" />
-    <Content Include="Models\dbQLBansach.dbml">
+    <Content Include="Models\dbQLClothes.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbQLBansach.designer.cs</LastGenOutput>
+      <LastGenOutput>dbQLClothes.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -196,6 +196,7 @@
     <Content Include="Views\ClothesStore\Index.cshtml" />
     <Content Include="Views\ClothesStore\Home.cshtml" />
     <Content Include="Views\User\SignUp.cshtml" />
+    <Content Include="Views\User\SignIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -217,8 +218,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\dbQLBansach.dbml.layout">
-      <DependentUpon>dbQLBansach.dbml</DependentUpon>
+    <None Include="Models\dbQLClothes.dbml.layout">
+      <DependentUpon>dbQLClothes.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>

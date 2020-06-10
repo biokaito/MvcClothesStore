@@ -5,7 +5,8 @@
 }
 
 <div>
-    <form style="width: 720px; background: #f1f1f1; height: 900px; padding: 80px 40px; border-radius: 10px; position: sticky; margin-bottom: 30px; left: 30%; top: 50%; box-shadow: 10px 10px 5px grey;">
+    <form method="post" style="width: 720px; background: #f1f1f1; height: 780px; padding: 80px 40px; border-radius: 10px; position: sticky; margin-bottom: 30px; left: 30%; top: 50%; box-shadow: 10px 10px 5px grey;">
+        @Html.ValidationSummary(true)
         <div class="title">
             <p style="font-size: 40px; margin-top: 1px; text-align: center;">SIGN UP</p>
         </div>
@@ -21,7 +22,7 @@
         </div>
 
         <div class="txtb">
-            <input type="text" name="cfpwd">
+            <input type="password" name="cfpwd">
             <span data-placeholder="Confirm your password"></span>
         </div>
 
@@ -50,6 +51,7 @@
             <span data-placeholder="Your birthday"></span>
         </div>
         <input type="submit" class="logbtn" value="Join">
+
         <div class="bottom-text">
             <a href="#" style="text-decoration: none">Forgot password?</a>
         </div>
@@ -66,12 +68,12 @@
 			$(this).removeClass("focus");
         });
 
-        function Kiemtra() {
-            var id = document.getElementsByName("TaiKhoan").value;
-            if (id=="") {
-                alert("Vui lòng nhập đầy đủ thông tin!!");
-            }
-        }
+        //function Kiemtra() {
+          //  var id = document.getElementsByName("TaiKhoan").value;
+            //if (id=="") {
+             //   alert("Vui lòng nhập đầy đủ thông tin!!");
+            //}
+     //   }
     </script>
 </div>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcClothesStore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,13 +10,19 @@ namespace MvcClothesStore.Controllers
     public class ClothesStoreController : Controller
     {
         // GET: ClothesStore
+        dbQLClothesDataContext db = new dbQLClothesDataContext();
+        private List<ITEM> Getproducts(int count)
+        {
+            return db.SanPhams.Take(count).ToList();
+        } 
         public ActionResult Index()
         {
             return View();
         }
         public ActionResult Home()
         {
-            return View();
+            var item = Getproducts(9);
+            return View(item);
         }
     }
 }
