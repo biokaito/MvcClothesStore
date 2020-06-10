@@ -1,0 +1,115 @@
+body{
+	background-color: #FFF;
+	font-size: 13px;
+	margin: 0px 0px 0px 0px;
+	font-family: Roboto,Nanum Gothic,Arial,verdana,sans-serif;
+}
+.slideshow{
+    width: 100%;
+    height: 100vh;
+    vertical-align: middle;
+    background-image: center center;
+    background-size: cover ;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    animation: slideSh 15s linear infinite 0s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes slideSh{
+    0% {
+        background-image: url(../../images/mainbn02.jpg);
+    }
+
+    33% {
+        background-image: url(../../images/mainbn01.jpg);
+    }
+
+    66% {
+        background-image: url(../../images/mainbn04.jpg);
+    }
+
+    100% {
+        background-image: url(../../images/mainbn02.jpg);
+    }
+}
+ul {
+list-style: none;
+}
+.edit_logo{
+	width: 120px;
+	height: 110px;
+	margin-bottom: 10px;
+}
+.top_menu_left{
+	font-size: 11px;
+	color: white;
+}
+.top_menu_left a{
+	color: white;
+	font-style: italic;
+}
+.menu_left a{
+	color: white;
+}
+.menu_left{
+	padding-top: 8px;
+	font-size: 20px;
+	color: white;
+    position: fixed;
+    left: 30px;
+    top: 30px;
+    width: 200px;
+    background: rgba(255,255,255,0);
+    padding: 30px;
+}
+.menu_left a{
+	text-decoration: none;
+	font-weight: bold;
+}
+.section1_wrap{
+	position: absolute;
+    left: 25%;
+    width: 50%;
+    top: 46%;
+    z-index: 9999;
+    text-align: center;
+}
+.btnSHOPNOW{
+	width: 200px;
+    line-height: 34px;
+    font-size: 16px;
+    padding: 7px;
+    border: 2px solid #000;
+    display: inline-block;
+    background: rgba(255,255,255,0.6);
+    color: #000;
+    font-weight: 700;
+    text-align: center;    
+}
+.btnSHOPNOW:hover{
+	background: rgba(255,248,220,0.6);
+
+}
+.section1_title01{
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    margin-bottom: 15px;
+}
+.section1_title02 {
+    font-size: 32px;
+    letter-spacing: 6px;
+    margin-bottom: 15px;
+}
+.section1_title03 {
+    font-size: 25px;
+    line-height: 20px;
+    letter-spacing: 0.8px;
+    margin-bottom: 20px;
+}
+.text {
+    font-weight: 300;
+}
+.section1_wrap .text {
+    color: #fff;
+    text-align: center;
+}

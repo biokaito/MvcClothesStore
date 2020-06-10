@@ -1,0 +1,259 @@
+body{
+	line-height: 1.4;
+    font-size: 14px;
+    background-color: #FFF;
+    font-family: Roboto,Nanum Gothic,Arial,verdana,sans-serif;
+    min-height: 100vh;
+}
+.namestore{
+	flex-grow: 30; 
+	text-align: center;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 50px;
+	text-shadow: 4px 10px 8px #cacddb;
+}
+.icon{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+	margin-right: 0;
+}
+.icon a{
+	height: 60px;
+	width: 60px;
+	background-color: #f5f6fa;
+	border-radius: 50px;
+	text-align: center;
+	margin: 10px;
+	line-height: 68px;
+	box-shadow: 1px 4px 2px 2px #dcdde1;
+	position: relative;
+	overflow: hidden;
+}
+.icon a i {
+	transition: all 0.3s linear;
+}
+.icon a:hover .fa{
+	transform: scale(1.4);
+	color: white;
+}
+.icon a:before{
+	content: "";
+	width: 120%; height: 120%;
+	position: absolute;
+	top: 90%; left: -50%;
+	background-color: #ad6989;
+	transform: rotate(60deg);
+}
+.icon a:hover:before{
+	animation: icon 1s 1;
+}
+@keyframes icon{
+	0% { top: 90%; left: -50%; }
+	50% { top: -60%; left: -10%; }
+	0% { top: -10%; left: -10%; }
+}
+.fa-facebook{
+	color: blue;
+}
+.fa-instagram{
+	color: #e84393;
+}
+.fa-user-circle-o{
+	color: black;
+}
+.fa-shopping-bag{
+	color: black;
+}
+.banner{
+	position: relative;
+    background-color: #EEE;
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+}
+.products{
+	float: left;
+	margin-left: 130px;
+}
+.item{
+	margin-left: 100px;
+	margin: 20px;
+	width: 500px;
+	text-align: center;
+	border: 10px black ;
+	float: left;
+	padding: 10px;
+	position: relative;
+	display: inline-block;
+}
+.item .Itemfront{
+	display: none;
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    margin-left: 120px;
+}
+.item:hover .Itemfront{
+	display: inline;
+}
+.item .productName{
+	font-family: 'Ubuntu', sans-serif;
+	margin: 0;
+	font-size: 33px;
+	margin-bottom: 10px;
+}
+.item .productPrice{
+	color: black;
+	font-size: 15px;
+	font-family: 'Ubuntu', sans-serif;
+
+}
+.menulist{
+    border: 1px;
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+    padding: 10px 5px;
+}
+.catalog ul{
+	list-style: none;
+}
+.catalog a{
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+	margin-left: 200px;	
+	transition: all 0.3s linear;
+}
+.catalog li a:hover{
+	transform: scale(1.4);
+	font-size: 30px;
+}
+.catalog li{
+	float: left;
+}
+.wrap_help{
+	background-color: #EEE;
+	height: 10px;
+	padding: 10px;
+}
+.menu li{
+	list-style: none;
+	float: left;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+.menu a{
+	text-decoration: none;
+	font-size: 15px;
+	color: black;
+}
+.menu a:hover{
+	color: white;
+}
+.titletext{
+	font-size: 40px;
+	text-align: center;
+}
+.contactus li{
+	list-style: none;
+	display: inline-block;
+}
+.contactus ul{
+	float: left;
+}
+.igcontact {
+	float: right;
+}
+______________Style Login__________
+*{
+	margin-right: 0;
+	padding: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+
+.login-form{
+	width: 720px;
+	background: #f1f1f1;
+	height: 580px;
+	padding: 80px 40px;
+	border-radius: 10px;
+	position: sticky;
+	margin-bottom: 30px;
+	left: 30%;
+	top: 50%;
+}
+
+.txtb{
+	border-bottom: 2px solid #adadad;
+	position: relative;
+	margin: 30px 0;
+}
+
+.txtb input{
+	font-size: 15px;
+	color: #333;
+	border: none;
+	width: 100%;
+	outline: none;
+	background: none;
+	padding: 0 5px;
+	height: 40px;
+}
+
+.txtb span::before{
+	content: attr(data-placeholder);
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	color: #adadad;
+	transform: translateY(-50%);
+	z-index: -1;
+	transition: .5s;
+}
+
+.txtb span::after{
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 2px;
+	background : linear-gradient(120deg,#3498db,#8e44ad);
+	transition: .5s;
+}
+.focus + span::before{
+	top: -5px;
+}
+.focus + span::after{
+	width: 100%;
+}
+.logbtn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border: none;
+	background: linear-gradient(120deg,#3498db,#8e44ad);
+	background-size: 200%;
+	color: #FFF;
+	cursor: pointer;
+	transition: .5s;
+	border-radius: 50px;
+	width: 200px;
+}
+.logbtn:hover{
+	background-position: right;
+}
+.bottom-text{
+	margin-top: 60px;
+	text-align: center;
+	font-size: 20px;
+	font-family: initial;
+}

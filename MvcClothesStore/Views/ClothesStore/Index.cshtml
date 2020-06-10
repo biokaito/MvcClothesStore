@@ -1,0 +1,140 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/stylehomepage1.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+		  $("._toggle1").click(function(){
+		    $(".hide1").toggle(500);
+		  });
+		});
+
+		$(document).ready(function(){
+		  $("._toggle2").click(function(){
+		    $(".hide2").toggle(500);
+		  });
+		});
+
+		$(document).ready(function(){
+		  $("._toggle3").click(function(){
+		    $(".hide3").toggle(500);
+		  });
+		});
+		$(document).ready(function(){
+		  $("._toggle4").click(function(){
+		    $(".hide4").toggle(500);
+		  });
+		});
+    </script>
+    </script>
+</head>
+<body>
+    <div class="slideshow"></div>
+    <div class="container">
+        <div class="menu_left">
+            <ul>
+                <li class="logo">
+                    <a href="#"><img class="edit_logo" src="~/images/logo.svg" alt="" /> </a>
+                </li>
+                <div class="top_menu_left">
+                    <li class="">
+                        <a href="#">login</a>
+                        /
+                        <a href="#">join us</a>
+                    </li>
+                    <li class="" style="width: 100%">
+                        <a href="#">my page</a>
+                        /
+                        <a href="" class="">
+                            basket
+                            <span>(0)</span>
+                        </a>
+                    </li>
+
+                    <li class="login_menu" style="width: 100%">
+                        <a href="#" target="_blank">delivery</a>
+                        /
+                        <a href="#" class="first" target="_blank">bookmark</a>
+                    </li>
+                </div>
+                <li class="_toggle1" style="margin-top:20px;">
+                    <a href="#">ABOUT US</a>
+                    <ul class="hide1" hidden="true">
+                        <li><a href="#">ABOUT DB</a></li>
+                        <li><a href="#">LOCATION</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">COLLECTION</a>
+                </li>
+                <li>
+                    <a class="_toggle2" href="#">SHOP</a>
+                    <ul class="hide2" hidden="true">
+                        <li class="">
+                            <a href="" class="h1">ALL PRODUCTS</a>
+                        </li>
+                        <li class=""><a href="#" class="h1">HOODIE/SWEATER</a></li>
+                        <li class=""><a href="#" class="h1">BACKPACK</a></li>
+                        <li class=""><a href="#" class="h1">SHORT/PANT</a></li>
+                        <li class=""><a href="#" class="h1">JACKET</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="_toggle3">COMMUNITY</a>
+                    <ul class="hide3" hidden="true">
+                        <li class="">
+                            <a href="#">NOTICE</a>
+                        </li>
+                        <li class="">
+                            <a href="#">Q & A</a>
+                        </li>
+                        <li class="">
+                            <a href="#">REVIEW</a>
+                        </li>
+                        <li class="xans-record-">
+                            <a href="#">FAQ</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li style="margin-top:20px;">
+                    <a href="#" class="_toggle4">>Time Open</a>
+                    <ul class="hide4" hidden="true">
+                        <li style="width: 100%; color: black;">
+                            1577 - 8498<br /><span>
+                                WEEKLY 10:00 - 17:00<br />
+                                LUNCH 11:50 - 12:50<br />
+                                SAT . SUN . HOLIDAY OFF
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+        </div>
+        <div class="section1_wrap">
+            <div class="section1_title01" class="text">NEW ARRIVAL</div>
+            <div class="section1_title02" class="text">
+                <strong>MOSS+</strong>
+            </div>
+            <div class="section1_title03" class="text">RESTOCK ALL ITEMS</div>
+            <a href="@Url.Action("Home", "ClothesStore")">
+                <Input type="submit" value="SHOP NOW" class="btnSHOPNOW" />                
+            </a>
+        </div>
+
+        <div class="sliderShow">
+
+        </div>
+
+        <div class="footer">
+
+        </div>
+    </div>
+</body>
+</html>

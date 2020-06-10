@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div>
+    <form style="width: 720px; background: #f1f1f1; height: 900px; padding: 80px 40px; border-radius: 10px; position: sticky; margin-bottom: 30px; left: 30%; top: 50%; box-shadow: 10px 10px 5px grey;">
+        <div class="title">
+            <p style="font-size: 40px; margin-top: 1px; text-align: center;">SIGN UP</p>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="username">
+            <span data-placeholder="Username"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="password" name="pwd">
+            <span data-placeholder="Password"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="cfpwd">
+            <span data-placeholder="Confirm your password"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="Hoten">
+            <span data-placeholder="Your full name"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="Email">
+            <span data-placeholder="Your Email"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="Diachi">
+            <span data-placeholder="Your Address"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="text" name="sdt">
+            <span data-placeholder="Your phone number"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="date" name="Ngaysinh">
+            <span data-placeholder="Your birthday"></span>
+        </div>
+        <input type="submit" class="logbtn" value="Join">
+        <div class="bottom-text">
+            <a href="#" style="text-decoration: none">Forgot password?</a>
+        </div>
+    </form>
+
+
+    <script type="text/javascript">
+		$(".txtb input").on("focus",function(){
+			$(this).addClass("focus");
+		});
+
+		$(".txtb input").on("blur",function(){
+			if($(this).val()=="")
+			$(this).removeClass("focus");
+        });
+
+        function Kiemtra() {
+            var id = document.getElementsByName("TaiKhoan").value;
+            if (id=="") {
+                alert("Vui lòng nhập đầy đủ thông tin!!");
+            }
+        }
+    </script>
+</div>
+
