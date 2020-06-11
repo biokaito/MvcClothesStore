@@ -132,6 +132,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbQLClothes.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\SANPHAM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

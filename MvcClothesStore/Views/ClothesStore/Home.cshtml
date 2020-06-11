@@ -1,11 +1,8 @@
-﻿
+﻿@model IEnumerable<MvcClothesStore.Models.SanPham>
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-
-
-
 
 <div class="title">
     <p class="titletext">ALL PRODUCTS</p>
@@ -20,76 +17,18 @@
     </ul>
 </div>
 <div class="products">
-    <div class="item">
-        <a href="#">
-            <img alt="Item Back" src="~/images/item1.JPG" width="300" />
-            <img class="Itemfront" src="~/images/item1hover.JPG" width="300">
-        </a>
-        <h3 class="productName">Bad Rabbit</h3>
-        <p class="productPrice">380 000 VNĐ</p>
-    </div>
-    <div class="item">
-        <a href="#">
-            <img alt="Item Back" src="~/images/item1.JPG" width="300" />
-            <img class="Itemfront" src="~/images/item1hover.JPG" width="300">
-        </a>
-        <h3 class="productName">Bad Rabbit</h3>
-        <p class="productPrice">380 000 VNĐ</p>
-    </div>
-    <div class="item">
-        <a href="#">
-            <img alt="Item Back" src="~/images/item1.JPG" width="300" />
-            <img class="Itemfront" src="~/images/item1hover.JPG" width="300">
-        </a>
-        <h3 class="productName">Bad Rabbit</h3>
-        <p class="productPrice">380 000 VNĐ</p>
-    </div>
-    <div class="item">
-        <a href="#">
-            <img alt="Item Back" src="~/images/item1.JPG" width="300" />
-            <img class="Itemfront" src="~/images/item1hover.JPG" width="300">
-        </a>
-        <h3 class="productName">Bad Rabbit</h3>
-        <p class="productPrice">380 000 VNĐ</p>
-    </div>
-    <div class="item">
-        <a href="#">
-            <img alt="Item Back" src="~/images/item1.JPG" width="300" />
-            <img class="Itemfront" src="~/images/item1hover.JPG" width="300">
-        </a>
-        <h3 class="productName">Bad Rabbit</h3>
-        <p class="productPrice">380 000 VNĐ</p>
-    </div>
-    <div class="item">
-        <a href="#">
-            <img alt="Item Back" src="~/images/item1.JPG" width="300" />
-            <img class="Itemfront" src="~/images/item1hover.JPG" width="300">
-        </a>
-        <h3 class="productName">Bad Rabbit</h3>
-        <p class="productPrice">380 000 VNĐ</p>
-    </div>
-    <div class="item">
-        <a href="#">
-            <img alt="Item Back" src="~/images/item1.JPG" width="300" />
-            <img class="Itemfront" src="~/images/item1hover.JPG" width="300">
-        </a>
-        <h3 class="productName">Bad Rabbit</h3>
-        <p class="productPrice">380 000 VNĐ</p>
-    </div>
-    <div class="item">
-        <a href="#">
-            <img alt="Item Back" src="~/images/item1.JPG" width="300" />
-            <img class="Itemfront" src="~/images/item1hover.JPG" width="300">
-        </a>
-        <h3 class="productName">Bad Rabbit</h3>
-        <p class="productPrice">380 000 VNĐ</p>
-    </div>
-    <div class="item">
-        <a href="#">
-            <img alt="Item Back" src="~/images/item1.JPG" width="300" />
-            <img class="Itemfront" src="~/images/item1hover.JPG" width="300">
-        </a>
-        <h3 class="productName">Bad Rabbit</h3>
-        <p class="productPrice">380 000 VNĐ</p>
-    </div>
+
+    @foreach (var i in Model)
+    {
+        <div class="item">
+            <a href="@Url.Action("Details","ClothesStore", new { id = i.MaSP })">
+                <img alt="@i.TenSP" src="~/images/@i.AnhSP" width="300" />
+                <img class="Itemfront" src="~/images/@i.Anh2SP" width="300">
+            </a>
+            <h3 class="productName">@i.TenSP</h3>
+            <p class="productPrice">@i.GiaHienTai</p>
+        </div>
+    }
+
+    
 </div>

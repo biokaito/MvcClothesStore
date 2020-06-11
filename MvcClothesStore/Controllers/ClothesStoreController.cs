@@ -11,14 +11,15 @@ namespace MvcClothesStore.Controllers
     {
         // GET: ClothesStore
         dbQLClothesDataContext db = new dbQLClothesDataContext();
-        private List<ITEM> Getproducts(int count)
+        private List<SanPham> Getproducts(int count)
         {
             return db.SanPhams.Take(count).ToList();
-        } 
+        }
         public ActionResult Index()
         {
             return View();
         }
+
         public ActionResult Home()
         {
             var item = Getproducts(9);
