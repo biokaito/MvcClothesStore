@@ -45,14 +45,14 @@
                 </li>
                 <div class="top_menu_left">
                     <li class="">
-                        <a href="#">login</a>
+                        <a href="@Url.Action("SignIn", "User")">login</a>
                         /
-                        <a href="#">join us</a>
+                        <a href="@Url.Action("SignUp", "User")">join us</a>
                     </li>
                     <li class="" style="width: 100%">
-                        <a href="#">my page</a>
+                        <a href="https://www.facebook.com/nguyentrieu.bas">my page</a>
                         /
-                        <a href="" class="">
+                        <a href="#" class="">
                             basket
                             <span>(0)</span>
                         </a>
@@ -72,18 +72,18 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">COLLECTION</a>
+                    <a href="@Url.Action("Home", "ClothesStore")">COLLECTION</a>
                 </li>
                 <li>
                     <a class="_toggle2" href="#">SHOP</a>
                     <ul class="hide2" hidden="true">
                         <li class="">
-                            <a href="" class="h1">ALL PRODUCTS</a>
+                            <a href="@Url.Action("Home", "ClothesStore")" class="h1">ALL PRODUCTS</a>
                         </li>
-                        <li class=""><a href="#" class="h1">HOODIE/SWEATER</a></li>
-                        <li class=""><a href="#" class="h1">BACKPACK</a></li>
-                        <li class=""><a href="#" class="h1">SHORT/PANT</a></li>
-                        <li class=""><a href="#" class="h1">JACKET</a></li>
+                        <li class=""><a href="@Url.Action("hdsw", "ClothesStore")" class="h1">HOODIE/SWEATER</a></li>
+                        <li class=""><a href="@Url.Action("backpack", "ClothesStore")" class="h1">BACKPACK</a></li>
+                        <li class=""><a href="@Url.Action("Shortpant", "ClothesStore")" class="h1">SHORT/PANT</a></li>
+                        <li class=""><a href="@Url.Action("Jacket", "ClothesStore")" class="h1">JACKET</a></li>
                     </ul>
                 </li>
                 <li>

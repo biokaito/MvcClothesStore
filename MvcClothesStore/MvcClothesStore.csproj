@@ -132,7 +132,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbQLClothes.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Models\SANPHAM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +197,11 @@
     <Content Include="Views\ClothesStore\Home.cshtml" />
     <Content Include="Views\User\SignUp.cshtml" />
     <Content Include="Views\User\SignIn.cshtml" />
+    <Content Include="Views\ClothesStore\NewProducts.cshtml" />
+    <Content Include="Views\ClothesStore\hdsw.cshtml" />
+    <Content Include="Views\ClothesStore\backpack.cshtml" />
+    <Content Include="Views\ClothesStore\Shortpant.cshtml" />
+    <Content Include="Views\ClothesStore\Jacket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
