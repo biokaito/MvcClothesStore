@@ -26,6 +26,18 @@
       <Association Name="MenuCon_SanPham" Member="SanPhams" ThisKey="id_con" OtherKey="id_con" Type="SanPham" />
     </Type>
   </Table>
+  <Table Name="dbo.NguoiDung" Member="NguoiDungs">
+    <Type Name="NguoiDung">
+      <Column Name="TenUser" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HoVaTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diachi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Quyen" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.SanPham" Member="SanPhams">
     <Type Name="SanPham">
       <Column Name="MaSP" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -37,18 +49,6 @@
       <Column Name="Anh2SP" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
       <Association Name="SanPham_GioHang" Member="GioHangs" ThisKey="MaSP" OtherKey="MaSP" Type="GioHang" />
       <Association Name="MenuCon_SanPham" Member="MenuCon" ThisKey="id_con" OtherKey="id_con" Type="MenuCon" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.NguoiDung" Member="NguoiDungs">
-    <Type Name="NguoiDung">
-      <Column Name="TenUser" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="HoVaTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="diachi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Quyen" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
