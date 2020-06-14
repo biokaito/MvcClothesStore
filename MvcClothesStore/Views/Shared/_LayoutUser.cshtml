@@ -10,6 +10,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 </head>
 <body>
+    @{ 
+        MvcClothesStore.Models.NguoiDung kh = (MvcClothesStore.Models.NguoiDung)Session["Taikhoan"];
+        var name = kh?.HoVaTen;
+    }
     <div class="banner">
         <div style="flex-grow: 1;">
             <img style="height: 100px;margin: 15px;" src="~/images/logo.svg">
@@ -18,15 +22,32 @@
             DOMBA <span style="font-size: 30px">in your</span> AREA
         </div>
         <div class="icon">
+            <div>Xin Chào, @name </div>
             <a href="https://www.facebook.com/nguyentrieu.bas" target="_blank">
                 <i class="fa fa-2x fa-facebook"></i>
             </a>
             <a href="https://www.instagram.com/official.domba/" target="_blank">
                 <i class="fa fa-2x fa-instagram"></i>
             </a>
-            <a href="@Url.Action("SignIn", "User")" target="_blank">
-                <i class="fa fa-2x fa-user-circle-o"></i>
-            </a>
+            @{
+                if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+                {
+                    <a href="@Url.Action("SignIn", "User")" target="_blank">
+                        <i class="fa fa-2x fa-user-circle-o"></i>
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("UpdateAccount", "User")" target="_blank">
+                        <i class="fa fa-2x fa-user-circle-o"></i>
+                    </a>
+                    <a href="@Url.Action("Logout","User")">
+                        <i class="fa fa-2x fa-sign-out" aria-hidden="true"></i>
+                    </a>
+                }
+            }
+
+
             <a href="#" target="_blank">
                 <i class="fa fa-2x fa-shopping-bag"></i>
             </a>

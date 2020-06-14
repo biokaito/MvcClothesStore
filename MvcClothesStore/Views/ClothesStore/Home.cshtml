@@ -1,4 +1,8 @@
-﻿@model IEnumerable<MvcClothesStore.Models.SanPham>
+﻿
+@using PagedList.Mvc;
+@using MvcClothesStore.Models;
+@model PagedList.PagedList<SanPham>
+
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -29,6 +33,36 @@
             <p class="productPrice">@i.GiaHienTai</p>
         </div>
     }
-
-    
 </div>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Home", new { page = page }))
+</div>
+<style>
+    .MenuTrang{
+        margin-left: 50%;
+    }
+    .MenuTrang li {
+        display: inline;
+        float: left;
+        border-right: 1px solid #bbb;
+    }
+    .MenuTrang li:last-child {
+        border-right: none;
+    }
+
+    .MenuTrang li a {
+        display: block;
+        color: Black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .MenuTrang li a:hover:not(.active) {
+        background-color: #4CAF50;
+    }
+
+    .MenuTrang .active {
+        background-color: #4CAF50;
+    }
+</style>

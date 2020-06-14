@@ -3,17 +3,19 @@
     ViewBag.Title = "SignUp";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-
+<script type="text/javascript">
+    
+</script>
 <div>
-    <form method="post" style="width: 720px; background: #f1f1f1; height: 780px; padding: 80px 40px; border-radius: 10px; position: sticky; margin-bottom: 30px; left: 30%; top: 50%; box-shadow: 10px 10px 5px grey;">
+    <form method="post" name="signin_form" onsubmit="return Kiemtra();" style="width: 720px; background: #f1f1f1; height: 780px; padding: 80px 40px; border-radius: 10px; position: sticky; margin-bottom: 30px; left: 30%; top: 50%; box-shadow: 10px 10px 5px grey;">
         @Html.ValidationSummary(true)
         <div class="title">
             <p style="font-size: 40px; margin-top: 1px; text-align: center;">SIGN UP</p>
         </div>
 
         <div class="txtb">
-            <input type="text" name="username">
-            <span data-placeholder="Username"></span>
+            <input type="text" id="username" name="username">
+            <span data-placeholder="User name"></span>
         </div>
 
         <div class="txtb">
@@ -55,25 +57,54 @@
         <div class="bottom-text">
             <a href="#" style="text-decoration: none">Forgot password?</a>
         </div>
-    </form>
-
-
-    <script type="text/javascript">
-		$(".txtb input").on("focus",function(){
-			$(this).addClass("focus");
-		});
-
-		$(".txtb input").on("blur",function(){
-			if($(this).val()=="")
-			$(this).removeClass("focus");
-        });
-
-        //function Kiemtra() {
-          //  var id = document.getElementsByName("TaiKhoan").value;
-            //if (id=="") {
-             //   alert("Vui lòng nhập đầy đủ thông tin!!");
-            //}
-     //   }
-    </script>
+    </form>    
 </div>
+<script type="text/javascript">
+    $(".txtb input").on("focus", function () {
+        $(this).addClass("focus");
+    });
+
+    $(".txtb input").on("blur", function () {
+        if ($(this).val() == "")
+            $(this).removeClass("focus");
+    });    
+    function Kiemtra() {
+        var name = document.getElementById('username').value;
+        var pass = document.forms["signin_form"]["pwd"].value;
+        var cfpass = document.forms["signin_form"]["cfpwd"].value;
+        var fullName = document.forms["signin_form"]["Hoten"].value;
+        var email = document.forms["signin_form"]["Email"].value;
+        var phoneNumber = document.forms["signin_form"]["sdt"].value;
+        var kiemTraDT = isNaN(phoneNumber);
+        if (name == "") {
+            alert("Vui lòng nhập tên đăng nhập!!");
+            return false;
+        }
+        if (pass == "") {
+            alert("Vui lòng nhập password!!");
+            return false;
+        }
+        if (cfpass == "") {
+            alert("Vui lòng xác nhập lại password!!");
+            return false;
+        }
+        if (fullName == "") {
+            alert("Vui lòng xác nhập họ và tên đầy đủ!!");
+            return false;
+        }
+        if (email == "") {
+            alert("Vui lòng nhập Email!!");
+            return false;
+        }
+        if (phoneNumber == "") {
+            alert("Vui lòng nhập số điện thoại!!");
+            return false;
+        }
+        if (kiemTraDT == true) {
+            alert("Số điện thoại phải để ở dạng số");
+            return false;
+        }
+
+    }
+</script>
 

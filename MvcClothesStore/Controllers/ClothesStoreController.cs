@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcClothesStore.Controllers
 {
@@ -24,10 +26,12 @@ namespace MvcClothesStore.Controllers
         {
             return View();
         }
-        public ActionResult Home()
+        public ActionResult Home(int ? page)
         {
+            int pageSize = 5;
+            int pageNum = (page ?? 1);
             var item = Getproducts();
-            return View(item);
+            return View(item.ToPagedList(pageNum,pageSize));
         }
         public ActionResult NewProducts()
         {

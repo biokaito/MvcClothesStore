@@ -26,15 +26,20 @@ namespace MvcClothesStore.Controllers
             var matkhau = collection["pwd"];
             NguoiDung kh = db.NguoiDungs.SingleOrDefault(n => n.TenUser == tendn && n.MatKhau == matkhau);
             if(kh != null)
-            {
-                ViewBag.Thongbao = " CHúc mừng bạn đã đăng nhập thành công";
+            {                
                 Session["Taikhoan"] = kh;
+                return RedirectToAction("Home", "ClothesStore");
             }
             else
             {
-                ViewBag.Thongbao = "Teen ddang nhap hoặc mật khẩu không đúng!";
+                ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng!";
             }
             return View();
+        }
+        public ActionResult Logout()
+        {
+            Session["Taikhoan"] = null;
+            return RedirectToAction("Home","ClothesStore");
         }
         [HttpGet]
         public ActionResult SignUp()
@@ -64,5 +69,17 @@ namespace MvcClothesStore.Controllers
                 db.SubmitChanges();
             return RedirectToAction("SignIn");
         }
+        [HttpPost]
+        public ActionResult UpdateAccount(String tenDN)
+        {
+            var user = db.NguoiDungs.Where(s => s.TenUser == tenDN).FirstOrDefault();
+            return View(user);
+        }
+        //[HttpPost]
+        //public ActionResult UpdateAccount(NguoiDung kh)
+        //{
+            
+            
+        //}
     }
 }
