@@ -241,6 +241,8 @@
     <Content Include="Views\User\UpdateAccount.cshtml" />
     <Content Include="Views\ClothesStore\Details.cshtml" />
     <Content Include="Views\Giohang\Index.cshtml" />
+    <Content Include="Views\Giohang\DatHang.cshtml" />
+    <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

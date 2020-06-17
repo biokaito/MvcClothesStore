@@ -1,0 +1,55 @@
+﻿@using MvcClothesStore.Models
+@{
+    ViewBag.Title = "Đặt hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<meta charset="UTF-8">
+
+<h2>THÔNG TIN ĐẶT HÀNG</h2>
+@{
+    NguoiDung nguoi = (NguoiDung)Session["Taikhoan"];
+}
+<table align="center">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td>Họ tên khách hàng</td>
+            <td style="font-weight:bold">@nguoi.HoVaTen</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Địa chỉ</td>
+            <td style="font-weight:bold">@nguoi.diachi</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Điện thoại</td>
+            <td style="font-weight:bold">@nguoi.phone</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Địa chỉ Email</td>
+            <td style="font-weight:bold">@nguoi.email</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Ngày đặt</td>
+            <td style="font-weight:bold">@DateTime.Now.ToShortDateString()</td>
+        </tr>
+        <tr style="height:40px">
+            <td>Ghi chú</td>
+            <td style="font-weight:bold">
+                <input type="text" name="GhiChu" />
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td>Ngày giao</td>
+            <td style="font-weight:bold">
+                <input type="date" name="NgayGiao" />
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td style="align-items:center">
+                <input type="submit" value="ĐỒNG Ý ĐẶT HÀNG" />
+            </td>
+        </tr>
+    }
+
+</table>
