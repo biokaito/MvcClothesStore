@@ -26,5 +26,11 @@ namespace MvcClothesStore.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult ThemmoiClothes()
+        {
+            return View();
+        }
     }
 }

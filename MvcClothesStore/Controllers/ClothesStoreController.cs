@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace MvcClothesStore.Controllers
 {
@@ -54,5 +56,12 @@ namespace MvcClothesStore.Controllers
             var item = from i in db.SanPhams where i.id_con == 5 select i;
             return View(item);
         }
+        public ActionResult Details(int id)
+        {
+            return View();
+        }
+        //
+        // GET: Laptops
+       
     }
 }
