@@ -537,6 +537,8 @@ namespace MvcClothesStore.Models
 		
 		private System.Nullable<byte> _Quyen;
 		
+		private System.Nullable<int> _id_user;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -557,6 +559,8 @@ namespace MvcClothesStore.Models
     partial void OnNgaySinhChanged();
     partial void OnQuyenChanging(System.Nullable<byte> value);
     partial void OnQuyenChanged();
+    partial void Onid_userChanging(System.Nullable<int> value);
+    partial void Onid_userChanged();
     #endregion
 		
 		public NguoiDung()
@@ -720,6 +724,26 @@ namespace MvcClothesStore.Models
 					this._Quyen = value;
 					this.SendPropertyChanged("Quyen");
 					this.OnQuyenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_user", DbType="Int")]
+		public System.Nullable<int> id_user
+		{
+			get
+			{
+				return this._id_user;
+			}
+			set
+			{
+				if ((this._id_user != value))
+				{
+					this.Onid_userChanging(value);
+					this.SendPropertyChanging();
+					this._id_user = value;
+					this.SendPropertyChanged("id_user");
+					this.Onid_userChanged();
 				}
 			}
 		}

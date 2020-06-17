@@ -1,0 +1,155 @@
+﻿@using MvcClothesStore.Models
+@model List<Giohang>
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@if (Model == null || Model.Count == 0)
+{
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <p style="margin-left:10px;color:red">
+        Giỏ hàng của bạn rỗng xin chọn hàng!!!
+    </p>
+    <a href="@Url.Action("Home", "ClothesStore")" class="btn btn-warning"><i class="fa fa-angle-left"></i> Quay lại mua hàng</a>
+}
+else
+{
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <style>
+            <style type="text/css" > .table&amp;amp;gt;tbody&amp;amp;gt;tr&amp;amp;gt;td, .table&amp;amp;gt;tfoot&amp;amp;gt;tr&amp;amp;gt;td {
+                vertical-align: middle;
+            }
+
+            media screen and (max-width: 600px) {
+                table #cart tbody td .form-control
+
+            {
+                width: 20%;
+                display: inline !important;
+            }
+
+            .actions .btn {
+                width: 36%;
+                margin: 1.5em 0;
+            }
+
+            .actions .btn-info {
+                float: left;
+            }
+
+            .actions .btn-danger {
+                float: right;
+            }
+
+            table#cart thead {
+                display: none;
+            }
+
+            table#cart tbody td {
+                display: block;
+                padding: .6rem;
+                min-width: 320px;
+            }
+
+            table#cart tbody tr td:first-child {
+                background: #333;
+                color: #fff;
+            }
+
+            table#cart tbody td:before {
+                content: attr(data-th);
+                font-weight: bold;
+                display: inline-block;
+                width: 8rem;
+            }
+
+            table#cart tfoot td {
+                display: block;
+            }
+
+                table#cart tfoot td .btn {
+                    display: block;
+                }
+            }
+        </style>
+        </style>
+    </head>
+
+    <h2 class="text-center">Đồ án môn học lập trình web MVC</h2>
+    <div class="container">
+        <table id="cart" class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th style="width:50%">Tên sản phẩm</th>
+                    <th style="width:10%">Giá</th>
+                    <th style="width:8%">Số lượng</th>
+                    <th style="width:22%" class="text-center">Thành tiền</th>
+                    <th style="width:10%"> </th>
+                </tr>
+            </thead>
+            @foreach (var i in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td data-th="Product">
+                            <div class="row">
+                                <div class="col-sm-2 hidden-xs">
+                                    <img src="~/images/@i.iAnhSP" class="img-responsive">
+                                </div>
+                                <div class="col-sm-10">
+                                    <h4 class="nomargin">@i.iTenSP</h4>
+                                    <p>Mô tả nơi đây nè bạn làm SQL ơi</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td data-th="Price" id="babc ">@i.iGiaHienTai đ</td>
+                        <td data-th="Quantity">
+                            <input id="quaySo" class="form-control text-center" value="1" type="number">
+                        </td>
+                        <td id="thanhTien" data-th="Subtotal" class="text-center">@i.iGiaHienTai</td>
+                        <td class="actions" data-th="">
+                            <a href="@Url.Action("Details","ClothersStore", new {iMaSP =Url.RequestContext.RouteData.Values["id"]})">
+                                <button class="btn btn-info btn-sm">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                </button>
+                            </a>
+                            <a href="@Url.Action("XoaKhoiGio",new { iMaSP = i.iMaSP})" onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?');">
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="glyphicon glyphicon-trash"></i>
+                                </button>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+            <tfoot>
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Home", "ClothesStore")" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                    </td>
+                    <td colspan="2" class="hidden-xs"> </td>
+                    <td class="hidden-xs text-center">
+                        <strong>Tổng tiền 500000 VND</strong>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("DatHang", "Giohang")" onclick="return confirm('Bạn đã kiểm tra kỹ chưa?');" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script>
+        var a = document.getElementById("thanhTien");
+        var b = documnet.getElementById("quaySo");
+        var c = b.value;
+        var d = document.getElementById("babc");
+        var e = d.value;
+        b.addEventListener('change', change1);
+        function change1() {
+            a.innerHTML = c * d;
+        }
+    </script>
+}

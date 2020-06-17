@@ -1,6 +1,7 @@
 ﻿using MvcClothesStore.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -69,17 +70,62 @@ namespace MvcClothesStore.Controllers
                 db.SubmitChanges();
             return RedirectToAction("SignIn");
         }
-        [HttpPost]
-        public ActionResult UpdateAccount(String tenDN)
+        //public class UserProfileEdit
+        //{
+        //    [Required]
+        //    [Display(Name = "First name")]
+        //    public string username { get; set; }
+
+        //    [Required]
+        //    [Display(Name = "Last name")]
+        //    public string Password { get; set; }
+
+        //    [Required]
+        //    [Display(Name = "Email")]
+        //    [DataType(DataType.EmailAddress)]
+        //    public string Email { get; set; }
+        //}
+        [HttpGet]
+        public ActionResult UpdateAccount(int id)
         {
-            var user = db.NguoiDungs.Where(s => s.TenUser == tenDN).FirstOrDefault();
+            NguoiDung user = db.NguoiDungs.SingleOrDefault(n => n.id_user == id);
+            if (user == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
             return View(user);
         }
-        //[HttpPost]
-        //public ActionResult UpdateAccount(NguoiDung kh)
-        //{
-            
-            
-        //}
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateAccount(NguoiDung user)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var edit = db.NguoiDungs.SingleOrDefault(u => u.id_user == user.id_user);
+                    edit.HoVaTen = user.HoVaTen;
+                    edit.email = user.email;
+                    edit.MatKhau = user.MatKhau;
+                    edit.diachi = user.diachi;
+                    edit.phone = user.phone;
+                    UpdateModel(edit);
+                    db.SubmitChanges();
+                    ViewBag.Thongbao = "Update successfully";
+                    return View();
+                }
+                catch (Exception ex)
+                {
+                    return HttpNotFound();
+                }
+            }
+            else
+            {
+                ViewBag.Thongbao = "Error";
+                return View();
+            }
+        }
     }
 }

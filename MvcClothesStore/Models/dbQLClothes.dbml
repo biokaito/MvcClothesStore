@@ -36,6 +36,7 @@
       <Column Name="diachi" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
       <Column Name="NgaySinh" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Quyen" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.SanPham" Member="SanPhams">

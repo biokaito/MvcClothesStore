@@ -35,7 +35,7 @@ namespace MvcClothesStore.Controllers
         }
         public ActionResult NewProducts()
         {
-            var item = Getnewproducts(7);
+            var item = Getnewproducts(5);
             return View(item);
         }
         public ActionResult hdsw()
@@ -57,6 +57,11 @@ namespace MvcClothesStore.Controllers
         {
             var item = from i in db.SanPhams where i.id_con == 5 select i;
             return View(item);
+        }
+        public ActionResult Details(string id)
+        {
+            var item = from i in db.SanPhams where i.MaSP == id select i;
+            return View(item.Single());
         }
     }
 }

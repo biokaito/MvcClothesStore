@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     @{ 
@@ -22,7 +23,7 @@
             DOMBA <span style="font-size: 30px">in your</span> AREA
         </div>
         <div class="icon">
-            <div>Xin Chào, @name </div>
+            <div style="font-family: 'MuseoModerno', cursive;font-size: 20px;margin-right:10px">Xin Chào @name ! </div>
             <a href="https://www.facebook.com/nguyentrieu.bas" target="_blank">
                 <i class="fa fa-2x fa-facebook"></i>
             </a>
@@ -38,7 +39,7 @@
                 }
                 else
                 {
-                    <a href="@Url.Action("UpdateAccount", "User")" target="_blank">
+                    <a href="@Url.Action("UpdateAccount", "User", new { id = kh.id_user })" target="_blank">
                         <i class="fa fa-2x fa-user-circle-o"></i>
                     </a>
                     <a href="@Url.Action("Logout","User")">
