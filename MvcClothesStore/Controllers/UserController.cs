@@ -32,7 +32,7 @@ namespace MvcClothesStore.Controllers
             }
             else
             {
-                ViewBag.Thongbao = "Teen ddang nhap hoặc mật khẩu không đúng!";
+                ViewBag.Thongbao = "Ten dang nhap hoặc mật khẩu không đúng!";
             }
             return View();
         }
@@ -66,3 +66,4 @@ namespace MvcClothesStore.Controllers
         }
     }
 }
+////
