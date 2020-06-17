@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace MvcClothesStore.Controllers
-{
+{     /**/
     public class UserController : Controller
     {
         // GET: User
