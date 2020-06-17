@@ -24,6 +24,6 @@ namespace MvcClothesStore.Controllers
             ab.SanPhams.InsertOnSubmit(a);
             ab.SubmitChanges();
             return View();
-        }
+        }////
     }
 }
