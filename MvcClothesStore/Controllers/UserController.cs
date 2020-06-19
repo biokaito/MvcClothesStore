@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace MvcClothesStore.Controllers
 {
@@ -98,25 +100,25 @@ namespace MvcClothesStore.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult UpdateAccount(NguoiDung user)
+        public ActionResult UpdateAccount(NguoiDung nd)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 try
                 {
-                    var edit = db.NguoiDungs.SingleOrDefault(u => u.id_user == user.id_user);
-                    edit.HoVaTen = user.HoVaTen;
-                    edit.email = user.email;
-                    edit.MatKhau = user.MatKhau;
-                    edit.diachi = user.diachi;
-                    edit.phone = user.phone;
-                    UpdateModel(edit);
+                    var editUser = db.NguoiDungs.SingleOrDefault(u => u.id_user == nd.id_user);
+                    editUser.TenUser = nd.TenUser; 
+                    editUser.email = editUser.email;
+                    editUser.MatKhau = nd.MatKhau;
+                    editUser.diachi = nd.diachi;
+                    editUser.phone = nd.phone;
+                    editUser.NgaySinh = nd.NgaySinh;
+                    UpdateModel(editUser);
                     db.SubmitChanges();
                     ViewBag.Thongbao = "Update successfully";
                     return View();
                 }
-                catch (Exception ex)
+                catch(Exception ex)
                 {
                     return HttpNotFound();
                 }
@@ -126,6 +128,7 @@ namespace MvcClothesStore.Controllers
                 ViewBag.Thongbao = "Error";
                 return View();
             }
+        
         }
     }
 }
